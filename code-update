@@ -1,0 +1,9 @@
+ else:
+        print '%-4s   %s'%(u'Serial number',u'Network card interface name')
+        for i,w in enumerate(wifi.interfaces()):
+            print '%-4s   %s'%(i,w.name())
+        while True:
+            iface_no = raw_input('Please select network card interface serial number:'.decode('utf-8').encode('gbk'))
+            no = int(iface_no)
+            if no>=0 and no < len(wifi.interfaces()):
+                return wifi.interfaces()[no]
